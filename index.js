@@ -11,6 +11,8 @@ var app = express();
 var cors = require('cors');
 app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 204
 
+const PORT = process.env.PORT || 3000;
+
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
@@ -27,4 +29,26 @@ app.get('/api/hello', function (req, res) {
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Your app is listening on port ' + listener.address().port);
+});
+
+app.get('/api/whoami', (req, res) => {
+  // Extract the IP address
+  const ipaddress = 
+    req.headers['x-forwarded-for'] ||
+    req.socket.remoteAddress ||
+    req.connection.remoteAddress ||
+    '';
+
+  // Extract the preferred language
+  const language = req.headers['accept-language'] || '';
+
+  // Extract the software information
+  const software = req.headers['user-agent'] || '';
+
+  // Respond with the JSON object
+  res.json({
+    ipaddress,
+    language,
+    software,
+  });
 });

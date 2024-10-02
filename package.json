@@ -1,10 +1,10 @@
 {
   "name": "request-header-parser-microservice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "API project for freeCodeCamp",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --watch index.js"
   },
   "dependencies": {
     "cors": "^2.8.1",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeCodeCamp/boilerplate-project-headerparser.git"
+    "url": "https://github.com/tech-gubbins/fcc-project-headerparser.git"
   },
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "homepage": "https://github.com/freeCodeCamp/boilerplate-project-headerparser#readme",
-  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "homepage": "https://github.com/tech-gubbins/fcc-project-headerparser#readme",
+  "author": "Joshua McNeel <joshua@inkblotmediagroup.com>",
   "keywords": [
     "freeCodeCamp",
     "node",
